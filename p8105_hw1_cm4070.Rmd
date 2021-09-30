@@ -1,6 +1,6 @@
 ---
 title: "p8105_hw1_cm4070"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
