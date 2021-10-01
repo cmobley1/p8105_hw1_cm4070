@@ -106,7 +106,14 @@ _This code will make a color coded scatter plot of flipper length vs. bill lengt
 
 ```{r ggplot_species, warning=FALSE}
 ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+```
 
+### Export scatterplot
+
+_This code will move the scatterplot to my p8105_hw1_cm4070 directory._
+
+```{r, ggplot_save, warning=FALSE}
+ggsave("scatter_plot.pdf", height = 4, width = 6)
 ```
 
 
