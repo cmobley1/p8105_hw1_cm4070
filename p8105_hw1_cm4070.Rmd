@@ -1,8 +1,31 @@
 ---
 title: "p8105_hw1_cm4070"
+author: Claire Mobley
+date: 2019-09-30
 output: github_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+# Problem 1 
+
+This code creates a data frame.
+
+### Create a data frame 
+
+```{r dataframe_problem1, message=FALSE}
+
+set.seed(1234)
+
+problem1_df = tibble(
+  x = rnorm(10),
+  vec_logical = x > 0, 
+  vec_char = c("Hi", "my", "name", "is", "Claire", "Mobley", "nice", "to", "meet", "you"), 
+  vec_factor = factor(c("red", "yellow", "green", "red", "yellow", "green", "yellow", "green", "green", "green"))
+)
+
+problem1_df
 ```
