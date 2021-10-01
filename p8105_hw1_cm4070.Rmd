@@ -7,14 +7,15 @@ output: github_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
 library(tidyverse)
 ```
 
 # Problem 1 
 
-This code creates a data frame.
-
 ### Create a data frame 
+
+_This code creates a data frame with numeric, logical, character, and factor variables._
 
 ```{r dataframe_problem1, message=FALSE}
 
@@ -30,10 +31,9 @@ problem1_df = tibble(
 problem1_df
 ```
 
-This code will compute the means of data frame 
-variables. 
-
 ### Compute the mean of each variable
+
+_This code attempts to compute the mean of x, vec_logical, vec_char, and vec_factor variables._
 
 ```{r means_problem1, message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -47,8 +47,6 @@ mean(pull(problem1_df, vec_char))
 mean(pull(problem1_df, vec_factor))
 ```
 
-This code provides the below computations. The numeric and logical variables work. The character and factor variables do not work. 
-
 * The mean of x is `r mean(pull(problem1_df, x))`
 
 * The mean of vec_logical is `r mean(pull(problem1_df, vec_logical))`
@@ -56,4 +54,31 @@ This code provides the below computations. The numeric and logical variables wor
 * The mean of vec_char is `r mean(pull(problem1_df, vec_char))`
 
 * The mean of vec_factor is `r mean(pull(problem1_df, vec_factor))`
+
+The numeric and logical variables work. 
+
+The character and factor variables do not work. 
+
+### Convert variables 
+
+_This code attempts to convert the vec_logical, vec_char, and vec_factor variables to numeric form._
+
+```{r numeric_problem1, eval = FALSE}
+as.numeric(pull(problem1_df, vec_logical))
+
+as.numeric(pull(problem1_df, vec_char))
+
+as.numeric(pull(problem1_df, vec_factor))
+```
+
+The as.numeric function creates a double-precision vector of the specified length with each element as 0. 
+
+* The logical vector turns into numericals with 0 as false and 1 as true. 
+* The factor vector turns into numericals 1 through 3 for 3 levels.
+
+* The character vector is unable to be interpreted in numericals because it is only characters. 
+
+The factor and character means could not be computed because they are either meaningless or cannot be made numerical.
+
+
 
