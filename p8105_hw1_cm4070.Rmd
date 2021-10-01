@@ -100,3 +100,16 @@ penguins
 
 * the mean flipper length is `r mean(na.rm=TRUE, pull(penguins, flipper_length_mm))` 
 
+### Scatterplot
+
+_This code will make a color coded scatter plot of flipper length vs. bill length for the species variable._
+
+```{r ggplot_species, warning=FALSE}
+ggplot(penguins, aes(x = flipper_length_mm, y = bill_length_mm, color = species)) + geom_point()
+
+```
+
+
+
+
+
