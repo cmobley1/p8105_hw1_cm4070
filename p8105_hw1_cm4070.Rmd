@@ -1,7 +1,7 @@
 ---
 title: "p8105_hw1_cm4070"
 author: Claire Mobley
-date: 2019-09-30
+date: 2021-09-30
 output: github_document
 ---
 
@@ -29,3 +29,31 @@ problem1_df = tibble(
 
 problem1_df
 ```
+
+This code will compute the means of data frame 
+variables. 
+
+### Compute the mean of each variable
+
+```{r means_problem1, message=FALSE, warning=FALSE}
+library(tidyverse)
+
+mean(pull(problem1_df, x))
+
+mean(pull(problem1_df, vec_logical))
+
+mean(pull(problem1_df, vec_char))
+
+mean(pull(problem1_df, vec_factor))
+```
+
+This code provides the below computations. The numeric and logical variables work. The character and factor variables do not work. 
+
+* The mean of x is `r mean(pull(problem1_df, x))`
+
+* The mean of vec_logical is `r mean(pull(problem1_df, vec_logical))`
+
+* The mean of vec_char is `r mean(pull(problem1_df, vec_char))`
+
+* The mean of vec_factor is `r mean(pull(problem1_df, vec_factor))`
+
